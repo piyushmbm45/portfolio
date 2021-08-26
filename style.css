@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    /* transition: all ease-in-out; */
+}
+
+
+.front {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url("https://images.unsplash.com/photo-1515462277126-2dd0c162007a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1535&q=80");
+}
+
+/* styling for navigation bar */
+
+.main {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    padding: 25px;
+
+}
+
+.main a {
+    color: coral;
+}
+
+.main a:hover {
+    color: white;
+    animation: float 2000ms;
+}
+
+.child {
+    font-weight: 800;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-links {
+    text-decoration: none;
+    list-style: none;
+    font-weight: 600;
+}
+
+/*  styling profile pic and content */
+
+.title {
+    display: grid;
+    height: 80vh;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 100px;
+}
+
+.content {
+    align-self: center;
+    color: white;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin: 10px;
+    margin-left: 20px;
+}
+
+.content h3 {
+    margin: 10px;
+    font-size: 1rem;
+}
+
+.content p {
+    font-size: .7rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.dpImage {
+    align-self: center;
+    filter: grayscale(100%);
+}
+.dpImage:hover{
+    filter: grayscale(50%);
+}
+
+.title img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 1px solid white;
+    image-rendering: optimizeSpeed;
+    margin-left: 10%;
+    box-shadow: .01px .01px 7px #ccc;
+}
+.myname{
+    background-image: cross-fade(25%);
+    background-image: url('https://cdn.pixabay.com/photo/2017/07/08/11/33/white-2484120_960_720.png');
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: moveBg 90ms linear infinite;
+    -webkit-animation: moveBg 20s linear infinite;
+}
+
+/* for all other pages */
+.title-about, .title-work, .title-resume, .title-apps{
+    text-align: center;
+}
+
+/* footer style */
+
+.last {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.icon:hover{
+    font-weight: 600;
+}
+
+
+.para {
+    align-self: center;
+    justify-self: center;
+}
+.para p:hover{
+    color: yellow;
+}
+
+.para p {
+    color: hsla(0, 10%, 60%, 1);
+}
+
+
+
+/* animation used */
+
+/* for navigation bar */
+@keyframes float {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* for name heading */
+@keyframes moveBg {
+    to{
+        background-position: 0% 30%;
+    }
+    from{
+        background-position: 100% 50%;
+    }
+}
+
+
+
+
+
+
+/* responsive website style */
+
+@media screen and (max-width : 768px) {
+
+    /* background control */
+    .front {
+        height: 110vh;
+    }
+
+    /* navigation bar */
+    .main {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: center;
+        column-gap: 1fr;
+    }
+
+    li {
+        margin: 15px;
+    }
+
+    /* content and profile pic */
+    .title {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* row-gap: 1fr; */
+    }
+
+    .content p {
+        margin: 15px;
+    }
+
+    .dpImage {
+        justify-self: center;
+    }
+
+    .title img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 1px solid white;
+        margin-left: 0;
+    }
+
+    /* footer style */
+
+    .last {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin: 10px;
+    }
+
+    .contact {
+        /* display: grid; */
+        grid-template-columns: repeat(4, 1fr);
+        align-self: center;
+        justify-self: center;
+        column-gap: 10px;
+    }
+
+
+    .para {
+        align-self: center;
+        justify-self: center;
+    }
+
+}
