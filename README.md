@@ -1,7 +1,7 @@
 # Portfolio
 
 ## This is My Portfolio website.
-It is very minimilistic and beautifull designed website by me.
+It is a very minimilistic and beautiful website designed by me.
 
 ## Languages and Frameworks
 * Html
