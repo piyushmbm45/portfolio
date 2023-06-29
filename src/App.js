@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { Route, Switch, Redirect, HashRouter } from 'react-router-dom';
 
 import { Main, BlogPage, ProjectPage } from './pages';
 import { BackToTop } from './components';
@@ -15,7 +10,7 @@ import './App.css';
 function App() {
   return (
     <div className="app">
-      <Router>
+      <HashRouter>
         <ScrollToTop />
         <Switch>
           <Route path="/" exact component={Main} />
@@ -24,7 +19,7 @@ function App() {
 
           <Redirect to="/" />
         </Switch>
-      </Router>
+      </HashRouter>
       <BackToTop />
     </div>
   );
