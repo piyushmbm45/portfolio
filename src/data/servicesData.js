@@ -1,10 +1,10 @@
 /* eslint-disable */
 import { BsCodeSlash } from 'react-icons/bs';
 import {
-    FaCameraRetro,
-    FaChalkboardTeacher,
-    FaRegNewspaper,
-    FaVideo
+  FaCameraRetro,
+  FaChalkboardTeacher,
+  FaLaptopCode,
+  FaRegNewspaper
 } from 'react-icons/fa';
 
 export const servicesData = [
@@ -19,14 +19,14 @@ export const servicesData = [
     icon: <BsCodeSlash />,
   },
   {
+    id: 1,
+    title: 'Web Development',
+    icon: <FaLaptopCode />,
+  },
+  {
     id: 7,
     title: 'Photography',
     icon: <FaCameraRetro />,
-  },
-  {
-    id: 9,
-    title: 'Video Editing',
-    icon: <FaVideo />,
   },
   {
     id: 13,

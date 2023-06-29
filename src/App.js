@@ -1,8 +1,8 @@
 import React from 'react';
-import { Route, Switch, Redirect, HashRouter } from 'react-router-dom';
+import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
 
-import { Main, BlogPage, ProjectPage } from './pages';
 import { BackToTop } from './components';
+import { Main, ProjectPage } from './pages';
 import ScrollToTop from './utils/ScrollToTop';
 
 import './App.css';
@@ -14,9 +14,7 @@ function App() {
         <ScrollToTop />
         <Switch>
           <Route path="/" exact component={Main} />
-          <Route path="/blog" exact component={BlogPage} />
           <Route path="/projects" exact component={ProjectPage} />
-
           <Redirect to="/" />
         </Switch>
       </HashRouter>
