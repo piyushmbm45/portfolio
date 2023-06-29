@@ -1,0 +1,8 @@
+1. for local development 
+    1. npm install
+    2. npm start
+
+2. for publishing on github pages
+    1. commit your changes
+    2. push the code
+    3. npm run deploy
