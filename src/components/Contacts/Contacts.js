@@ -267,27 +267,36 @@ function Contacts() {
           </div>
 
           <div className="contacts-details">
-            <a
-              href={`mailto:${contactsData.email}`}
-              className="personal-details"
-            >
-              <div className={classes.detailsIcon}>
-                <FiAtSign />
+            {contactsData.email && (
+              <a
+                href={`mailto:${contactsData.email}`}
+                className="personal-details"
+              >
+                <div className={classes.detailsIcon}>
+                  <FiAtSign />
+                </div>
+                <p style={{ color: theme.tertiary }}>{contactsData.email}</p>
+              </a>
+            )}
+            {contactsData.phone && (
+              <a
+                href={`tel:${contactsData.phone}`}
+                className="personal-details"
+              >
+                <div className={classes.detailsIcon}>
+                  <FiPhone />
+                </div>
+                <p style={{ color: theme.tertiary }}>{contactsData.phone}</p>
+              </a>
+            )}
+            {contactsData.address && (
+              <div className="personal-details">
+                <div className={classes.detailsIcon}>
+                  <HiOutlineLocationMarker />
+                </div>
+                <p style={{ color: theme.tertiary }}>{contactsData.address}</p>
               </div>
-              <p style={{ color: theme.tertiary }}>{contactsData.email}</p>
-            </a>
-            <a href={`tel:${contactsData.phone}`} className="personal-details">
-              <div className={classes.detailsIcon}>
-                <FiPhone />
-              </div>
-              <p style={{ color: theme.tertiary }}>{contactsData.phone}</p>
-            </a>
-            <div className="personal-details">
-              <div className={classes.detailsIcon}>
-                <HiOutlineLocationMarker />
-              </div>
-              <p style={{ color: theme.tertiary }}>{contactsData.address}</p>
-            </div>
+            )}
 
             <div className="socialmedia-icons">
               {socialsData.twitter && (
