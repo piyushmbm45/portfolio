@@ -1,17 +1,16 @@
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { headerData } from '../../data/headerData';
 import { socialsData } from '../../data/socialsData';
 import './Landing.css';
-
-import {
-    FaGithub,
-    FaLinkedin
-} from 'react-icons/fa';
+import Particles from 'react-tsparticles';
+import { loadFull } from 'tsparticles';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import optionsParticle, { charOpt } from './bg';
 
 function Landing() {
   const { theme, drawerOpen } = useContext(ThemeContext);
@@ -63,10 +62,29 @@ function Landing() {
   }));
 
   const classes = useStyles();
+  const particlesInit = useCallback(async (engine) => {
+    console.log(engine);
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    await console.log(container);
+  }, []);
 
   return (
     <div className="landing">
       <div className="landing--container">
+        {/* <Particles
+          id="tsparticles"
+          init={particlesInit}
+          loaded={particlesLoaded}
+          options={charOpt}
+          width="350px"
+          height="100%"
+        ></Particles> */}
         <div
           className="landing--container-left"
           style={{ backgroundColor: theme.primary }}
