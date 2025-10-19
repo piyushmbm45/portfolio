@@ -7,7 +7,7 @@ import { FaUser } from 'react-icons/fa';
 import { HiDocumentText } from 'react-icons/hi';
 import { IoHomeSharp, IoMenuSharp } from 'react-icons/io5';
 import { MdPhone } from 'react-icons/md';
-import Fade from 'react-reveal/Fade';
+import { motion } from 'framer-motion';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
@@ -175,50 +175,70 @@ function Navbar() {
 
         <div onClick={handleDrawerClose}>
           <div className="navLink--container">
-            <Fade left>
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
               <NavLink to="/" smooth={true} spy="true" duration={2000}>
                 <div className={classes.drawerItem}>
                   <IoHomeSharp className={classes.drawerIcon} />
                   <span className={classes.drawerLinks}>Home</span>
                 </div>
               </NavLink>
-            </Fade>
+            </motion.div>
 
-            <Fade left>
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
               <NavLink to="/#about" smooth={true} spy="true" duration={2000}>
                 <div className={classes.drawerItem}>
                   <FaUser className={classes.drawerIcon} />
                   <span className={classes.drawerLinks}>About</span>
                 </div>
               </NavLink>
-            </Fade>
+            </motion.div>
 
-            <Fade left>
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <NavLink to="/#resume" smooth={true} spy="true" duration={2000}>
                 <div className={classes.drawerItem}>
                   <HiDocumentText className={classes.drawerIcon} />
                   <span className={classes.drawerLinks}>Resume</span>
                 </div>
               </NavLink>
-            </Fade>
+            </motion.div>
 
-            <Fade left>
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
               <NavLink to="/#services" smooth={true} spy="true" duration={2000}>
                 <div className={classes.drawerItem}>
                   <BsFillGearFill className={classes.drawerIcon} />
                   <span className={classes.drawerLinks}>Services</span>
                 </div>
               </NavLink>
-            </Fade>
+            </motion.div>
 
-            <Fade left>
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               <NavLink to="/#contacts" smooth={true} spy="true" duration={2000}>
                 <div className={classes.drawerItem}>
                   <MdPhone className={classes.drawerIcon} />
                   <span className={classes.drawerLinks}>Contact</span>
                 </div>
               </NavLink>
-            </Fade>
+            </motion.div>
           </div>
         </div>
       </Drawer>

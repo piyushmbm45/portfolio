@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import ThemeContextProvider from './contexts/ThemeContext';
+import App from './App.js';
+import reportWebVitals from './reportWebVitals.js';
+import ThemeContextProvider from './contexts/ThemeContext.js';
 
 ReactDOM.render(
   <ThemeContextProvider>

@@ -1,24 +1,30 @@
-import React,{useContext} from 'react';
-import Fade from 'react-reveal/Fade';
+import React, { useContext } from 'react';
+import { motion } from 'framer-motion';
 
 import { ThemeContext } from '../../../contexts/ThemeContext';
 
-import './SingleService.css'
+import './SingleService.css';
 
-
-function SingleService({id, title, icon}) {
-
-    const { theme } = useContext(ThemeContext);
-    return (
-        <Fade bottom>
-            <div key={id} className="single-service" style={{backgroundColor:theme.primary400}}>
-                <div className="service-content"  style={{color:theme.tertiary}}>
-                    <i className="service-icon">{icon}</i>
-                    <h4  style={{color:theme.tertiary}}>{title}</h4>  
-                </div>         
-            </div>
-        </Fade>
-    )
+function SingleService({ id, title, icon }) {
+  const { theme } = useContext(ThemeContext);
+  return (
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div
+        key={id}
+        className="single-service"
+        style={{ backgroundColor: theme.primary400 }}
+      >
+        <div className="service-content" style={{ color: theme.tertiary }}>
+          <i className="service-icon">{icon}</i>
+          <h4 style={{ color: theme.tertiary }}>{title}</h4>
+        </div>
+      </div>
+    </motion.div>
+  );
 }
 
-export default SingleService
+export default SingleService;
