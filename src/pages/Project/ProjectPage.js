@@ -21,6 +21,10 @@ function ProjectPage() {
         return content.toLowerCase().includes(search.toLowerCase())
     })
 
+    if(theme){
+        document.body.style.backgroundColor = theme.secondary
+    }
+
     const useStyles = makeStyles((t) => ({
         search : {
             color: theme.tertiary, 
