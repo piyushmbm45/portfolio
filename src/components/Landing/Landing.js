@@ -76,7 +76,7 @@ function Landing() {
   const containerRef = useRef(null);
   const contentRef = useRef(null);
   const imgRef = useRef(null);
-  const [showParticles, setShowParticles] = useState(false);
+  const [showParticles, setShowParticles] = useState(false); // Disabled to reduce distraction
   const [imageError, setImageError] = useState(false);
   const [imageSrc, setImageSrc] = useState(headerData.image);
 
@@ -221,57 +221,14 @@ function Landing() {
     return () => observer.disconnect();
   }, [theme]);
 
+  // Particles disabled to reduce distraction
   useEffect(() => {
-    // Defer loading particles to improve TTI
-    const prefersReducedMotion =
-      typeof window !== 'undefined' && window.matchMedia
-        ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        : false;
-    if (prefersReducedMotion) {
-      setShowParticles(false);
-      return;
-    }
-    let idleId;
-    if ('requestIdleCallback' in window) {
-      idleId = window.requestIdleCallback(() => setShowParticles(true), {
-        timeout: 1000,
-      });
-    } else {
-      const t = setTimeout(() => setShowParticles(true), 700);
-      idleId = { cancel: () => clearTimeout(t) };
-    }
-    return () => {
-      if (typeof idleId === 'number' && 'cancelIdleCallback' in window) {
-        // @ts-ignore
-        window.cancelIdleCallback(idleId);
-      } else if (idleId && idleId.cancel) {
-        idleId.cancel();
-      }
-    };
+    setShowParticles(false);
   }, []);
   return (
     <div className="landing" ref={containerRef}>
       <div className="landing--container">
-        {/* Particles background */}
-        <div className="particles-bg" aria-hidden="true">
-          {showParticles && (
-            <Suspense fallback={null}>
-              <LazyParticles
-                id="tsparticles"
-                init={async (engine) => {
-                  await loadFull(engine);
-                }}
-                options={themedParticlesOptions}
-                style={{ pointerEvents: 'none' }}
-              />
-            </Suspense>
-          )}
-        </div>
-
-        {/* Decorative floating shapes - keeping for compatibility */}
-        <div className="floating floating--one" aria-hidden="true" />
-        <div className="floating floating--two" aria-hidden="true" />
-        <div className="floating floating--three" aria-hidden="true" />
+        {/* Particles and floating shapes disabled to reduce distraction */}
         <div
           className="landing--container-left"
           style={{ backgroundColor: theme.primary }}

@@ -79,18 +79,18 @@
   z-index: 2;
 }
 
-/* Ensure content appears above particles */
+/* Ensure content appears above particles and physics elements */
 .landing--container-left,
 .landing--container-right {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .landing--img,
 .lcr--content,
 .lcl--content {
   position: relative;
-  z-index: 3;
+  z-index: 4;
 }
 
 /* Mobile: Image centered at top, overlapping both sections */
