@@ -378,3 +378,25 @@ export const yellowThemeDark = {
   expimg: expYellow,
   contactsimg: contactsYellow,
 };
+
+export const spaceThemeDark = {
+  type: 'dark',
+  primary: '#6366f1', // Indigo - main accent
+  primary400: '#818cf8', // Light indigo
+  primary600: '#4f46e5', // Deep indigo
+  primary80: '#6366f1cc',
+  primary50: '#6366f180',
+  primary30: '#6366f14d',
+  secondary: '#1a1f3a', // Lighter space background for better visibility
+  secondary70: '#1a1f3ab3',
+  secondary50: '#1a1f3a80',
+  tertiary: '#f8fafc', // Bright white for text - better contrast
+  tertiary80: '#f8fafccc',
+  tertiary70: '#f8fafcb3',
+  tertiary50: '#f8fafc80',
+  aboutimg1: blueThemeboy,
+  aboutimg2: '',
+  eduimg: eduBlue,
+  expimg: expBlue,
+  contactsimg: contactsBlue,
+};

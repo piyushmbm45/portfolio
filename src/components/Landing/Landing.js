@@ -77,16 +77,28 @@ function Landing() {
   const contentRef = useRef(null);
   const imgRef = useRef(null);
   const [showParticles, setShowParticles] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const [imageSrc, setImageSrc] = useState(headerData.image);
 
   const themedParticlesOptions = useMemo(() => {
-    const primary = theme.primary;
-    const secondary = theme.secondary;
-    const tertiary = theme.tertiary;
+    // Space-themed colors
+    const spaceColors = [
+      '#ffffff', // Bright stars
+      '#e0e7ff', // Light blue stars
+      '#a5b4fc', // Blue stars
+      '#818cf8', // Purple-blue
+      '#6366f1', // Indigo
+      '#8b5cf6', // Purple
+      '#06b6d4', // Cyan
+      '#22d3ee', // Sky blue
+      '#67e8f9', // Light cyan
+    ];
 
     const base = { ...options };
     base.particles = base.particles || {};
     base.particles.links = base.particles.links || {};
     base.particles.move = base.particles.move || {};
+    base.particles.opacity = base.particles.opacity || {};
 
     const isMobile =
       typeof window !== 'undefined' ? window.innerWidth < 900 : false;
@@ -94,8 +106,8 @@ function Landing() {
       typeof window !== 'undefined' && window.matchMedia
         ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
         : false;
-    const particleCount = prefersReducedMotion ? 0 : isMobile ? 40 : 100;
-    const particleSpeed = prefersReducedMotion ? 0 : isMobile ? 0.6 : 1.1;
+    const particleCount = prefersReducedMotion ? 0 : isMobile ? 60 : 150;
+    const particleSpeed = prefersReducedMotion ? 0 : isMobile ? 0.4 : 0.8;
 
     return {
       ...base,
@@ -103,59 +115,91 @@ function Landing() {
       fpsLimit: 60,
       particles: {
         ...base.particles,
-        number: { value: particleCount, density: { enable: true, area: 900 } },
-        color: { value: [tertiary, primary, secondary] },
+        number: { value: particleCount, density: { enable: true, area: 800 } },
+        color: { value: spaceColors },
         links: {
           ...base.particles.links,
           enable: true,
-          color: tertiary,
-          opacity: 0.25,
-          distance: 140,
+          color: '#818cf8',
+          opacity: 0.4,
+          distance: 120,
           width: 1,
         },
-        opacity: { value: 0.7 },
-        size: { value: { min: 1, max: 4 } },
+        opacity: {
+          value: { min: 0.3, max: 1 },
+          animation: {
+            enable: true,
+            speed: 0.5,
+            sync: false,
+            minimumValue: 0.3,
+          },
+        },
+        size: {
+          value: { min: 0.5, max: 8 }, // Increased max for planets
+          animation: {
+            enable: true,
+            speed: 2,
+            minimumValue: 0.5,
+            sync: false,
+          },
+        },
+        shape: {
+          type: 'circle',
+        },
         move: {
           ...base.particles.move,
           enable: true,
           speed: particleSpeed,
-          warp: true,
+          direction: 'none',
+          random: true,
+          straight: false,
+          outModes: {
+            default: 'out',
+          },
           attract: { enable: true, rotateX: 600, rotateY: 1200 },
         },
       },
       absorbers: {
         orbits: true,
         destroy: false,
-        color: primary,
-        size: { value: 8, limit: 60, density: 1500 },
+        color: '#1e1b4b', // Deep space blue
+        size: { value: 10, limit: 80, density: 1500 },
         position: { x: 50, y: 50 },
       },
       interactivity: {
         events: {
-          onHover: { enable: true, mode: 'attract' },
+          onHover: { enable: true, mode: 'grab' },
           onClick: { enable: true, mode: 'push' },
           resize: true,
         },
         modes: {
-          attract: { distance: 200, duration: 0.3, speed: 1 },
+          grab: {
+            distance: 200,
+            links: {
+              opacity: 0.4,
+            },
+          },
           push: { quantity: 4 },
           repulse: { distance: 150, duration: 0.4 },
         },
       },
       detectRetina: true,
     };
-  }, [theme]);
+  }, []);
 
   useEffect(() => {
-    // Pass theme colors into CSS variables for animated gradient and floating shapes
+    // Pass space theme colors into CSS variables for animated gradient and floating shapes
     if (containerRef.current) {
       const root = containerRef.current;
-      root.style.setProperty('--landingGrad1', theme.secondary);
-      root.style.setProperty('--landingGrad2', theme.tertiary);
-      root.style.setProperty('--landingGrad3', theme.primary);
-      root.style.setProperty('--floatGrad1', theme.primary);
-      root.style.setProperty('--floatGrad2', theme.tertiary);
-      root.style.setProperty('--floatGrad3', theme.secondary);
+      // Lighter space blues for better visibility
+      root.style.setProperty('--landingGrad1', '#1a1f3a'); // Lighter space
+      root.style.setProperty('--landingGrad2', '#2d3561'); // Medium blue
+      root.style.setProperty('--landingGrad3', '#3b4a7a'); // Lighter blue
+      root.style.setProperty('--landingGrad4', '#1e1b4b'); // Purple-blue
+      // Floating shapes with space colors
+      root.style.setProperty('--floatGrad1', '#6366f1'); // Indigo
+      root.style.setProperty('--floatGrad2', '#8b5cf6'); // Purple
+      root.style.setProperty('--floatGrad3', '#06b6d4'); // Cyan
     }
 
     // Simple intersection observer for scroll-reveal
@@ -223,7 +267,8 @@ function Landing() {
             </Suspense>
           )}
         </div>
-        {/* Decorative floating shapes */}
+
+        {/* Decorative floating shapes - keeping for compatibility */}
         <div className="floating floating--one" aria-hidden="true" />
         <div className="floating floating--two" aria-hidden="true" />
         <div className="floating floating--three" aria-hidden="true" />
@@ -253,10 +298,22 @@ function Landing() {
           </div>
         </div>
         <img
-          src={headerData.image}
-          alt=""
+          src={imageError ? headerData.fallbackImage : imageSrc}
+          alt={headerData.imageAlt || `${headerData.name} - ${headerData.title}`}
           className="landing--img reveal"
           ref={imgRef}
+          onError={() => {
+            if (!imageError) {
+              setImageError(true);
+              setImageSrc(headerData.fallbackImage);
+            }
+          }}
+          onLoad={() => {
+            // Image loaded successfully
+            if (imgRef.current) {
+              imgRef.current.classList.add('glow');
+            }
+          }}
           style={{
             opacity: `${drawerOpen ? '0' : '1'}`,
             borderColor: theme.secondary,

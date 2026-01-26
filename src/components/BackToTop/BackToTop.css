@@ -1,9 +1,13 @@
+/* ============================================
+   MOBILE FIRST - Base Styles (Mobile)
+   ============================================ */
+
 .backToTop {
-    position: fixed; 
-    right: 10px;
-    bottom: 60px;
+    position: fixed;
+    right: -10px;
+    bottom: 50px;
     height: 30px;
-    font-size: 3rem;
+    font-size: 2.75rem;
     z-index: 999;
 }
 
@@ -15,10 +19,13 @@
     padding: 20px;
 }
 
-@media screen and (max-width: 800px) {
-    .backToTop { 
-        right: -10px;
-        bottom: 50px;
-        font-size: 2.75rem;
+/* ============================================
+   DESKTOP - min-width: 800px
+   ============================================ */
+@media (min-width: 800px) {
+    .backToTop {
+        right: 10px;
+        bottom: 60px;
+        font-size: 3rem;
     }
 }

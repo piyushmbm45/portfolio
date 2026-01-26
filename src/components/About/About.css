@@ -1,59 +1,66 @@
+/* ============================================
+   MOBILE FIRST - Base Styles (Mobile)
+   ============================================ */
+
 .about {
     min-height: 100vh;
     position: relative;
 }
 
-.about .line-styling{
+.about .line-styling {
   position: absolute;
-  top: 50px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   height: 50px;
   width: 85%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.about .line-styling .style-circle{
-  width: 10px;
-  height: 10px;
+.about .line-styling .style-circle {
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
 }
-.about .line-styling .style-line{
-  width: 95%;
-  height: 5px;
+
+.about .line-styling .style-line {
+  width: 93%;
+  height: 3px;
   border-radius: 10px;
 }
 
 .about-body {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     align-items: center;
-    justify-content: space-around;
-    padding-top: 8rem;
+    justify-content: space-evenly;
+    padding-top: 2rem;
     height: fit-content;
 }
 
 .about-description {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-evenly;
-    flex: 0.5;
+    flex: 0.6;
     width: 100%;
     height: fit-content;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
-.about-description >h2 {
-    margin-bottom: 40px;
-    font-size: 3.5rem;
+.about-description > h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
     font-family: var(--primaryFont);
+    align-self: center;
 }
 
 .about-description > p {
-    font-size: 1.25rem;
+    font-size: 0.95rem;
     color: #e0d9d9;
     font-family: var(--primaryFont);
 }
@@ -64,97 +71,94 @@
 }
 
 .about-img > img {
-    width: 380px;
-    flex: 0.5;
+    width: 200px;
+    flex: 0.4;
 }
 
-@media (min-width: 992px) and (max-width: 1380px) {
-
-    .about-description > h2 {
-      font-size: 3.3rem;
-      margin-bottom: 30px;
-    }
-    .about-description > p {
-      font-size: 1.15rem;
-    }
-
-    .about-img>img {
-        width: 300px;
-    } 
-}
-
-@media screen and (max-width: 992px){
-
-  .about .line-styling{
-    top: 20px;
-  }
-
-    .about-body {
-        padding-top: 2rem;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-
-    .about-description{
-        flex: 0.6;
-        box-sizing: border-box;
-        /* padding: 5% 10%; */
-        padding: 20px;
-
-    }
-
-    .about-description > h2 {
-        font-size: 3rem;
-        margin-bottom: 20px;
-    }
-
-    .about-description > p {
-        font-size: 1.1rem;
-    }
-
-    .about-img > img {
-        width: 250px;
-        flex: 0.4;
-    }
-
-}
-
-@media screen and (max-width: 800px){
-  .about .line-styling .style-circle{
+/* ============================================
+   TABLET - min-width: 600px
+   ============================================ */
+@media (min-width: 600px) {
+  .about .line-styling .style-circle {
     width: 8px;
     height: 8px;
-    border-radius: 50%;
-  }
-  .about-description > h2{
-    align-self: center;
   }
 
-}
-
-@media screen and (max-width: 600px){
-
-  .about .line-styling .style-circle{
-    width: 5px;
+  .about .line-styling .style-line {
+    width: 95%;
     height: 5px;
-    border-radius: 50%;
-  }
-  .about .line-styling .style-line{
-    width: 93%;
-    height: 3px;
-    border-radius: 10px;
   }
 
   .about-description > h2 {
     font-size: 2.5rem;
   }
 
-    .about-description > p{
-      font-size: 0.95rem;
-    }
+  .about-description > p {
+    font-size: 0.95rem;
+  }
 
-    .about-img > img {
-        width: 200px;
-    }
+  .about-img > img {
+    width: 200px;
+  }
+}
+
+/* ============================================
+   DESKTOP - min-width: 800px
+   ============================================ */
+@media (min-width: 800px) {
+  .about-description > h2 {
+    align-self: flex-start;
+  }
+}
+
+/* ============================================
+   LARGE TABLET/DESKTOP - min-width: 992px
+   ============================================ */
+@media (min-width: 992px) {
+  .about .line-styling {
+    top: 20px;
+  }
+
+  .about-body {
+    flex-direction: row;
+    padding-top: 2rem;
+  }
+
+  .about-description {
+    flex: 0.5;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .about-description > h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .about-description > p {
+    font-size: 1.1rem;
+  }
+
+  .about-img > img {
+    width: 250px;
+    flex: 0.4;
+  }
+}
+
+/* ============================================
+   EXTRA LARGE DESKTOP - min-width: 1380px
+   ============================================ */
+@media (min-width: 1380px) {
+  .about-description > h2 {
+    font-size: 3.3rem;
+    margin-bottom: 30px;
+  }
+
+  .about-description > p {
+    font-size: 1.15rem;
+  }
+
+  .about-img > img {
+    width: 300px;
+  }
 }

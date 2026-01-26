@@ -4,3 +4,7 @@
     /* --primaryFont: 'Raleway', sans-serif; */
 }
 
+.app {
+    position: relative;
+    z-index: 1;
+}

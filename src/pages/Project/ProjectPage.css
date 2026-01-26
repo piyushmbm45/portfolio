@@ -1,3 +1,7 @@
+/* ============================================
+   MOBILE FIRST - Base Styles (Mobile)
+   ============================================ */
+
 .projectPage {
     display: flex;
     flex-direction: column;
@@ -7,7 +11,7 @@
 }
 
 .projectPage-header {
-    height: 35vh;
+    height: 20vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -16,12 +20,13 @@
 }
 
 .projectPage-header > h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-family: var(--primaryFont);
+    text-align: center;
 }
 
 .projectPage-container {
-    padding: 3rem 2rem;
+    padding: 2rem 1rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -37,26 +42,45 @@
 }
 
 .project-container {
-    margin-top: 5rem;
+    margin-top: 3rem;
     width: 100%;
 }
 
 .project-grid {
     display: flex;
-    gap: 4rem; 
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-@media (min-width: 992px) and (max-width: 1380px) {
+/* ============================================
+   TABLET - min-width: 550px
+   ============================================ */
+@media (min-width: 550px) {
+    .projectPage-header {
+        height: 20vh;
+    }
 
+    .projectPage-header h1 {
+        font-size: 3rem;
+    }
 }
 
-@media screen and (max-width: 992px) {
+/* ============================================
+   DESKTOP - min-width: 702px
+   ============================================ */
+@media (min-width: 702px) {
+    .project-grid {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+}
+
+/* ============================================
+   LARGE DESKTOP - min-width: 992px
+   ============================================ */
+@media (min-width: 992px) {
     .projectPage-header {
         height: 25vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .project-grid {
@@ -64,22 +88,27 @@
     }
 }
 
-@media screen and (max-width: 702px) {
-    .project-grid {
-        gap: 1.5rem;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .projectPage-header h1 {
-        font-size: 3rem;
-    }
-}
-@media screen and (max-width: 400px) {
+/* ============================================
+   EXTRA LARGE DESKTOP - min-width: 1380px
+   ============================================ */
+@media (min-width: 1380px) {
     .projectPage-header {
-        height: 20vh;
+        height: 35vh;
     }
-    .projectPage-header h1 {
-        font-size: 2.5rem;
+
+    .projectPage-header > h1 {
+        font-size: 4rem;
+    }
+
+    .projectPage-container {
+        padding: 3rem 2rem;
+    }
+
+    .project-container {
+        margin-top: 5rem;
+    }
+
+    .project-grid {
+        gap: 4rem;
     }
 }
