@@ -13,6 +13,7 @@ import nodejs from '../assets/svg/skills/nodejs.svg';
 import postgresql from '../assets/svg/skills/postgresql.svg';
 import react from '../assets/svg/skills/react.svg';
 import tailwind from '../assets/svg/skills/tailwind.svg';
+import redis from '../assets/svg/skills/redis.svg';
 import typescript from '../assets/svg/skills/typescript.svg';
 
 export const skillsImage = (skill) => {
@@ -41,6 +42,8 @@ export const skillsImage = (skill) => {
       return mysql;
     case 'postgresql':
       return postgresql;
+    case 'redis':
+      return redis;
     case 'tailwind':
       return tailwind;
     case 'vitejs':

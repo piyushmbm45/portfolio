@@ -20,6 +20,7 @@ import {
 import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
 import { FiPhone, FiAtSign } from 'react-icons/fi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { motion } from 'framer-motion';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 
@@ -168,7 +169,12 @@ function Contacts() {
       <div className="contacts--container">
         <h1 style={{ color: theme.primary }}>Contacts</h1>
         <div className="contacts-body">
-          <div className="contacts-form">
+          <motion.div className="contacts-form"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <form onSubmit={handleContactForm}>
               <div className="input-container">
                 <label htmlFor="Name" className={classes.label}>
@@ -264,9 +270,14 @@ function Contacts() {
                 message={errMsg}
               />
             </Snackbar>
-          </div>
+          </motion.div>
 
-          <div className="contacts-details">
+          <motion.div className="contacts-details"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             {contactsData.email && (
               <a
                 href={`mailto:${contactsData.email}`}
@@ -410,7 +421,7 @@ function Contacts() {
                 </a>
               )}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <img src={theme.contactsimg} alt="contacts" className="contacts--img" />

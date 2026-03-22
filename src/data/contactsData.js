@@ -1,6 +1,6 @@
 export const contactsData = {
   email: 'piyushmbm45@gmail.com',
-  phone: '',
-  address: 'Tonk, Rajasthan India 304001',
+  phone: '+91-7737593993',
+  address: 'Jaipur, India',
   sheetAPI: 'https://formspree.io/f/mdornpll',
 };

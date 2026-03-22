@@ -13,9 +13,11 @@ function ThemeContextProvider(props) {
         setDrawerOpen(!drawerOpen)
     }
 
+    const changeTheme = (newTheme) => {
+        setTheme(newTheme)
+    }
 
-
-    const value = { theme, drawerOpen, setHandleDrawer }
+    const value = { theme, drawerOpen, setHandleDrawer, changeTheme }
     return (
         <ThemeContext.Provider value={value}>
             {props.children}

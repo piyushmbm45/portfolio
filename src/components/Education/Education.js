@@ -6,6 +6,7 @@ import './Education.css'
 import EducationCard from './EducationCard';
 
 import { educationData } from '../../data/educationData'
+import { motion } from 'framer-motion';
 
 function Education() {
 
@@ -14,10 +15,15 @@ function Education() {
         <div className="education" id="resume" style={{backgroundColor: theme.secondary}}>
            
             <div className="education-body">
-                <div className="education-description">
+                <motion.div className="education-description"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
                 <h1 style={{color:theme.primary}}>Education</h1>
                     {educationData.map(edu => (
-                        <EducationCard 
+                        <EducationCard
                             key={edu.id}
                             id={edu.id}
                             institution={edu.institution}
@@ -26,10 +32,15 @@ function Education() {
                             endYear={edu.endYear}
                         />
                     ))}
-                </div>
-                <div className="education-image">
-                    <img src={theme.eduimg} alt=""/>
-                </div>
+                </motion.div>
+                <motion.div className="education-image"
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                    <img src={theme.eduimg} alt="Education background"/>
+                </motion.div>
             </div>
         </div>
     )

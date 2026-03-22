@@ -1,5 +1,5 @@
 .experience {
-  min-height: 100vh;
+  padding: 4rem 0;
 }
 
 .experience-body {
@@ -34,7 +34,8 @@
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
-  height: 140px;
+  min-height: 120px;
+  height: auto;
   padding: 1.5rem;
   border-radius: 20px;
   margin-bottom: 1.5rem;
@@ -98,7 +99,7 @@
 
 @media screen and (max-width: 992px) {
   .experience {
-    min-height: 100%;
+    padding: 3rem 0;
   }
   .experience-image {
     display: none;
@@ -129,7 +130,8 @@
   .experience-card {
     padding: 1rem;
     margin-bottom: 1.5rem;
-    height: 130px;
+    min-height: 100px;
+    height: auto;
   }
   .expcard-img {
     border-radius: 50%;
@@ -160,13 +162,4 @@
   .experience-description > h1 {
     font-size: 2.5rem;
   }
-}
-
-@media screen and (max-width: 400px) {
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
-}
-
-@media only screen and (device-width: 768px) {
 }

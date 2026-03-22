@@ -30,7 +30,7 @@ function ProjectPage() {
             border: 'none',
             borderRadius: '20px',
             padding: '0.95rem 1rem',
-            fontFamily: "'Noto Sans TC', sans-serif",
+            fontFamily: 'var(--primaryFont)',
             fontWeight: 500,
             fontSize: '0.9rem',  
             backgroundColor: theme.secondary, 

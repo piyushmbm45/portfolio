@@ -1,7 +1,6 @@
 /* eslint-disable */
 import { BsCodeSlash } from 'react-icons/bs';
 import {
-  FaCameraRetro,
   FaChalkboardTeacher,
   FaLaptopCode,
   FaRegNewspaper
@@ -9,28 +8,23 @@ import {
 
 export const servicesData = [
   {
-    id: 5,
-    title: 'Tutoring',
-    icon: <FaChalkboardTeacher />,
-  },
-  {
-    id: 6,
-    title: 'Web Design',
+    id: 1,
+    title: 'Backend Development',
     icon: <BsCodeSlash />,
   },
   {
-    id: 1,
-    title: 'Web Development',
+    id: 2,
+    title: 'Full Stack Development',
     icon: <FaLaptopCode />,
   },
   {
-    id: 7,
-    title: 'Photography',
-    icon: <FaCameraRetro />,
+    id: 3,
+    title: 'System Design',
+    icon: <FaChalkboardTeacher />,
   },
   {
-    id: 13,
-    title: 'Blog Posting',
+    id: 4,
+    title: 'Database Optimization',
     icon: <FaRegNewspaper />,
   },
 ];

@@ -17,7 +17,6 @@
   --img-size: 400px;
   position: absolute;
   left: 35%;
-  transform: translateX(-50%);
   width: var(--img-size);
   height: var(--img-size);
   object-fit: cover;
@@ -55,7 +54,6 @@
 .landing--container-right {
   flex: 65%;
   height: 100%;
-  background-color: #eaeaea;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -96,7 +94,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "var(--primaryFont)", sans-serif;
+  font-family: var(--primaryFont);
+}
+
+.typing-cursor {
+  animation: blink 1s step-end infinite;
+  font-weight: 300;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.gradient-name {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @media (max-width: 1100px) {
@@ -166,8 +182,7 @@
     --img-size: 200px;
     left: 50%;
     top: 30%;
-    border: 8px solid #eaeaea;
-    transform: translate(-50%, -50%);
+    border: 8px solid;
   }
   .landing--container-left {
     flex: initial;
@@ -183,7 +198,6 @@
     flex: initial;
     height: 70%;
     width: 100%;
-    background-color: #eaeaea;
     align-items: center;
     justify-content: center;
     padding: 0 2rem;

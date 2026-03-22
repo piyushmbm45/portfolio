@@ -3,9 +3,9 @@ import img from '../assets/png/profile_photo.png';
 
 export const headerData = {
   name: 'Piyush Jain',
-  title: 'Full Stack Web Developer',
+  title: 'Assistant Tech Lead | Full Stack Engineer',
   description:
-    'As a web developer, I turn ideas into interactive experiences, crafting digital solutions that empower businesses and individuals to thrive in the online world.',
+    'Assistant Tech Lead with 4+ years of experience designing, scaling, and operating high-volume production systems. Strong expertise in Node.js, PostgreSQL, distributed databases, and system design. Currently owning POS and KYC platforms handling millions of records and high daily transaction volumes.',
   image: img,
   resumePdf: resume,
 };

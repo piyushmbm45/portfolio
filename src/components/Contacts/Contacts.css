@@ -1,10 +1,10 @@
 .contacts {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     position: relative;
+    padding: 4rem 0 2rem;
 }
 
 
@@ -21,17 +21,15 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 2rem 6rem 3rem;
-    width: 80%;
+    padding: 0 4rem 2rem;
+    width: 85%;
     height: 100%;
-    margin-top: 2rem;
 }
 
 .contacts--container > h1 {
     font-family: var(--primaryFont);
     font-size: 3.5rem;
-    margin-bottom: 2.5rem;
-
+    margin-bottom: 2rem;
 }
 
 .contacts-body {
@@ -104,7 +102,7 @@
 }
 
 .submit-btn button p {
-    font-size: 16px;
+    font-size: 1rem;
     font-family: var(--primaryFont);
 }
 
@@ -115,13 +113,13 @@
     padding: 5px;
 }
 .send-icon {
-    font-size: 25px;
+    font-size: 1.5rem;
     transform-origin: center;
     transform: translate(5px,-3px) rotate(-30deg);
 }
 
 .success-icon {
-    font-size: 28px;
+    font-size: 1.75rem;
     transition: all 0.3s 0.8s ease-in-out;
 }
 
@@ -149,7 +147,7 @@
 
 .personal-details p {
     margin-left: 1.5rem;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 110%;
     font-weight: 500;
     font-family: var(--primaryFont);
@@ -176,9 +174,8 @@
         width: 240px;
     }
     .contacts--container {
-        padding: 2rem 4rem;
+        padding: 0 3rem 2rem;
         width: 90%;
-        margin-top: 1rem;
     }
 }
 
@@ -189,11 +186,10 @@
     }
     .contacts--container {
         width: 100%;
-        margin-top: 1rem;
     }
     .contacts--container > h1 {
         font-size: 3rem;
-        margin: 0 0 1.2rem 0;
+        margin-bottom: 2rem;
     }
     .contacts-details {
         padding-left: 4rem;
@@ -207,11 +203,10 @@
 @media screen and (max-width: 800px) {
     .contacts--container h1 {
         font-size: 3rem;
-        margin-bottom: 30px;
+        margin-bottom: 2rem;
     }
     .contacts--container {
-        padding: 2rem;
-        margin-top: 0rem;
+        padding: 0 1.5rem 2rem;
         align-items: center;
     }
     .contacts-body {
@@ -259,7 +254,7 @@
     }
     .contacts--container h1 {
         font-size: 2.5rem;
-        margin-bottom: 20px;
+        margin-bottom: 1.5rem;
     }
 }
 

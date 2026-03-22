@@ -1,10 +1,9 @@
 .achievement {
-    min-height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 3rem;
+    padding: 4rem 2rem;
 }
 
 .achievement-body {
@@ -19,7 +18,7 @@
 .achievement-body h1 {
     font-family: var(--primaryFont);
     font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .achievement-body h4 {
@@ -44,43 +43,40 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    height: 170px;
+    min-height: 140px;
     padding: 1.5rem;
     border-radius: 20px;
     margin-bottom: 1.5rem;
     margin-left: 1.5rem;
     transition: background-color 200ms ease-in-out;
     width: 100%;
-    position: relative;
+    gap: 1rem;
 }
 
 .achievecard-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-around;
-    width: 65%;
-   
+    justify-content: flex-start;
+    flex: 1;
+    gap: 0.75rem;
 }
 
 .achievecard-details2 {
     display: flex;
     flex-direction: row;
-    width: 50%;
     align-items: center;
     font-family: var(--primaryFont);
-    font-size: 18px;
-    position: absolute;
-    bottom: 7px;
-    left: 25px;
+    font-size: 0.9rem;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
 }
 
 .achievecard-details2 h5 {
-   width: 50%;
+    white-space: nowrap;
 }
 
 .achievecard-field {
-    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -92,26 +88,28 @@
 
 .achievecard-details1 h2 {
     font-family: var(--primaryFont);
-    font-weight: 500;
-    font-size: 1.225rem;
-    line-height: 110%;
-    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 1.15rem;
+    line-height: 130%;
+    margin-bottom: 4px;
 }
 
 .achievecard-details1 p {
-    font-size: 1.10rem;
-    font-family: Roboto;
+    font-size: 0.95rem;
+    font-family: var(--primaryFont);
     font-weight: 400;
+    line-height: 150%;
 }
 
 .achievecard-imgcontainer {
-    width: 23%;
+    flex-shrink: 0;
 }
 
 .achievecard-imgcontainer > img {
-    width: 150px;
-    height: 130px;
+    width: 130px;
+    height: 110px;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 @media (min-width: 992px) and (max-width: 1380px) {
@@ -145,7 +143,7 @@
 }
 
 @media screen and (max-width: 992px) {
-    .achievement{
+    .achievement {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -153,7 +151,6 @@
         width: 100%;
         padding: 2rem;
     }
-
 
     .achievement-body {
         width: 100%;
@@ -164,75 +161,60 @@
     }
 
     .achievement-cards {
-        margin-left: 0%;
+        margin-left: 0;
         padding: 1rem 0;
-        width: 80%;
+        width: 90%;
         margin-top: 1rem;
     }
 
     .achievement-card {
-        margin-left: 0px;
-        height: fit-content;
-    }
-
-    .achievecard-content {
-        width: 70%;
-    }
-
-    .achievecard-details1 {
-        margin-bottom: 20px;
+        margin-left: 0;
     }
 
     .achievecard-details1 h2 {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
 
     .achievecard-details1 p {
-        font-size: 0.95rem;
-    }
-
-    .achievecard-details2 {
-        width: 85%;
-        position: absolute;
-        bottom: 7px;
-        left: 25px;
-    }
-
-    .achievecard-imgcontainer {
-        width: 30%;
-        display: flex;
-       justify-content: center;
+        font-size: 0.9rem;
     }
 
     .achievecard-imgcontainer > img {
-        width: 80px;
-        height: 70px;
+        width: 100px;
+        height: 85px;
     }
-    
 }
 
 @media screen and (max-width: 600px) {
-    .achievement{
+    .achievement {
         padding: 1rem;
     }
-    .achievement-cards {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 600px) {
 
     .achievement-body h4 {
         font-size: 1.5rem;
     }
 
-    .achievecard-details1 p {
-        font-size: 0.95rem;
-    }
-    .achievecard-imgcontainer > img {
-        width: 70px;
-        height: 60px;
+    .achievement-cards {
+        width: 100%;
     }
 
+    .achievement-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .achievecard-imgcontainer {
+        align-self: center;
+    }
+
+    .achievecard-imgcontainer > img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+    }
+
+    .achievecard-details1 p {
+        font-size: 0.9rem;
+    }
 }
 

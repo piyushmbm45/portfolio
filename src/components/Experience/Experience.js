@@ -6,6 +6,7 @@ import './Experience.css';
 
 import { experienceData } from '../../data/experienceData';
 import ExperienceCard from './ExperienceCard';
+import { motion } from 'framer-motion';
 
 function Experience() {
   const { theme } = useContext(ThemeContext);
@@ -16,7 +17,12 @@ function Experience() {
       style={{ backgroundColor: theme.secondary }}
     >
       <div className="experience-body">
-        <div className="experience-description">
+        <motion.div className="experience-description"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h1 style={{ color: theme.primary }}>Experience</h1>
           {experienceData.map((exp) => (
             <ExperienceCard
@@ -28,10 +34,15 @@ function Experience() {
               endYear={exp.endYear}
             />
           ))}
-        </div>
-        <div className="experience-image">
-          <img src={theme.expimg} alt="" />
-        </div>
+        </motion.div>
+        <motion.div className="experience-image"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <img src={theme.expimg} alt="Professional experience" />
+        </motion.div>
       </div>
     </div>
   );

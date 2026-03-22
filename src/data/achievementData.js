@@ -1,5 +1,5 @@
 export const achievementData = {
-  bio: 'I did my Engineering from MBM Engg. College in 2014. After that i decided to teach Physics for different competitive examination like JEE, NEET, KVPY, Olympiad etc. Now i have decided to switch my career line as a full stack web developer and i am really enjoying it.',
+  bio: 'Assistant Tech Lead with 4+ years of experience in full stack development. Graduated from MBM University in 2014. Currently owning KYC and POS platforms at Nordem Technologies, handling millions of records with high daily transaction volumes. Specialized in Node.js, PostgreSQL, distributed databases, and system design.',
   achievements: [
     {
       id: 1,

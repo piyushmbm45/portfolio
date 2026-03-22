@@ -1,8 +1,8 @@
 export const aboutData = {
   title: 'Who I am',
   description1:
-    "My name is Piyush. I'm a full stack web developer based in Rajasthan, India.",
+    "My name is Piyush. I'm an Assistant Tech Lead and Full Stack Engineer based in Jaipur, India.",
   description2:
-    "During the day I work as a full stack wev developer at Arnowa and in the evening I  work on my self and utilize the time to built my own products. I spent my leisure hours reading articles and poetry. Right now I'm also trying a hand at Next js. I love to learn and explore new arenas.",
+    "I work at Nordem Technologies where I own KYC and POS backend systems at production scale, handling 3,000+ KYC onboardings per day over 23+ million records and POS systems processing up to 500,000 bills per day. I specialize in Node.js, PostgreSQL, distributed databases (Citus), Redis caching, and system design for high-availability architectures.",
   image: 1,
 };

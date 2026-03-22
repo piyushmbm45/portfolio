@@ -1,15 +1,46 @@
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { headerData } from '../../data/headerData';
 import { socialsData } from '../../data/socialsData';
 import './Landing.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+
+const roles = [
+  'Assistant Tech Lead',
+  'Full Stack Engineer',
+  'System Design Enthusiast',
+  'Database Architect',
+];
 
 function Landing() {
   const { theme, drawerOpen } = useContext(ThemeContext);
+
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [text, setText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        setText(currentRole.substring(0, text.length + 1));
+        if (text.length + 1 === currentRole.length) {
+          setTimeout(() => setIsDeleting(true), 1500);
+        }
+      } else {
+        setText(currentRole.substring(0, text.length - 1));
+        if (text.length === 0) {
+          setIsDeleting(false);
+          setRoleIndex((prev) => (prev + 1) % roles.length);
+        }
+      }
+    }, isDeleting ? 50 : 100);
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting, roleIndex]);
 
   const useStyles = makeStyles((t) => ({
     resumeBtn: {
@@ -65,7 +96,7 @@ function Landing() {
           className="landing--container-left"
           style={{ backgroundColor: theme.primary }}
         >
-          <div className="lcl--content">
+          <motion.div className="lcl--content" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
             {socialsData.linkedIn && (
               <a href={socialsData.linkedIn} target="_blank" rel="noreferrer">
                 <FaLinkedin
@@ -84,24 +115,30 @@ function Landing() {
                 />
               </a>
             )}
-          </div>
+          </motion.div>
         </div>
-        <img
+        <motion.img
           src={headerData.image}
-          alt=""
+          alt="Piyush Jain - Assistant Tech Lead"
           className="landing--img"
           style={{
             opacity: `${drawerOpen ? '0' : '1'}`,
             borderColor: theme.secondary,
+            x: '-50%',
           }}
+          initial={{ opacity: 0, scale: 0.5, x: '-50%' }}
+          animate={{ opacity: drawerOpen ? 0 : 1, scale: 1, x: '-50%' }}
+          transition={{ duration: 0.8 }}
         />
         <div
           className="landing--container-right"
           style={{ backgroundColor: theme.secondary }}
         >
-          <div className="lcr--content" style={{ color: theme.tertiary }}>
-            <h6>{headerData.title}</h6>
-            <h1>{headerData.name}</h1>
+          <motion.div className="lcr--content" initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} style={{ color: theme.tertiary }}>
+            <h6 style={{ minHeight: '1.5em' }}>
+              {text}<span className="typing-cursor" style={{ color: theme.primary }}>|</span>
+            </h6>
+            <h1 className="gradient-name" style={{ '--gradient-start': theme.tertiary, '--gradient-end': theme.primary }}>{headerData.name}</h1>
             <p>{headerData.description}</p>
 
             <div className="lcr-buttonContainer">
@@ -119,7 +156,7 @@ function Landing() {
                 <Button className={classes.contactBtn}>Contact</Button>
               </NavLink>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

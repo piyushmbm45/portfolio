@@ -6,6 +6,7 @@ import './Skills.css'
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { skillsData } from '../../data/skillsData'
 import { skillsImage } from '../../utils/skillsImage'
+import { motion } from 'framer-motion';
 
 function Skills() {
 
@@ -18,10 +19,20 @@ function Skills() {
 
     return (
         <div className="skills" style={{backgroundColor: theme.secondary}}>
-            <div className="skillsHeader">
+            <motion.div className="skillsHeader"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
                 <h2 style={{color: theme.primary}}>Skills</h2>
-            </div>
-            <div className="skillsContainer">
+            </motion.div>
+            <motion.div className="skillsContainer"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
                 <div className="skill--scroll">
                     <Marquee 
                         gradient={false} 
@@ -42,7 +53,7 @@ function Skills() {
                         ))}
                     </Marquee>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }
