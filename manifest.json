@@ -1,6 +1,7 @@
 {
-  "short_name": "Piyush Developer Portfolio",
-  "name": "this is piyush jain developer portfolio",
+  "short_name": "Piyush Jain",
+  "name": "Piyush Jain | Assistant Tech Lead & Full Stack Engineer",
+  "description": "Portfolio of Piyush Jain - Assistant Tech Lead with expertise in Node.js, PostgreSQL, and system design",
   "icons": [
     {
       "src": "favicon.ico",
