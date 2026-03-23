@@ -36,9 +36,7 @@ function StatCard({ number, suffix, label, theme, delay, startCounting }) {
     <motion.div
       className="stat-card"
       style={{
-        background: theme.type === 'dark'
-          ? `rgba(255, 255, 255, 0.05)`
-          : `rgba(0, 0, 0, 0.03)`,
+        background: theme.type === 'dark' ? `rgba(255, 255, 255, 0.05)` : `rgba(0, 0, 0, 0.03)`,
         border: `1px solid ${theme.primary30}`,
         backdropFilter: 'blur(10px)',
         WebkitBackdropFilter: 'blur(10px)',
@@ -49,7 +47,8 @@ function StatCard({ number, suffix, label, theme, delay, startCounting }) {
       transition={{ duration: 0.5, delay }}
     >
       <h2 className="stat-number" style={{ color: theme.primary }}>
-        {count.toLocaleString()}{suffix}
+        {count.toLocaleString()}
+        {suffix}
       </h2>
       <p className="stat-label" style={{ color: theme.tertiary80 }}>
         {label}
@@ -86,12 +85,7 @@ function Stats() {
   ];
 
   return (
-    <div
-      className="stats"
-      id="stats"
-      ref={sectionRef}
-      style={{ backgroundColor: theme.secondary }}
-    >
+    <div className="stats" id="stats" ref={sectionRef} style={{ backgroundColor: theme.secondary }}>
       <motion.h2
         className="stats-header"
         style={{ color: theme.primary }}

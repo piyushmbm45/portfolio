@@ -29,12 +29,16 @@
   padding: 1.5rem 1rem;
   border-radius: 16px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .stat-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 0 20px rgba(84, 95, 196, 0.15);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 0 20px rgba(84, 95, 196, 0.15);
 }
 
 .stat-number {

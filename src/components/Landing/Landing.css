@@ -36,21 +36,21 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  background: linear-gradient(
-    -45deg,
-    var(--grad-1),
-    var(--grad-2),
-    var(--grad-3),
-    var(--grad-1)
-  );
+  background: linear-gradient(-45deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-1));
   background-size: 300% 300%;
   animation: gradientShift 8s ease infinite;
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .lcl--content {
@@ -134,8 +134,13 @@
 }
 
 @keyframes blink {
-  from, to { opacity: 1; }
-  50% { opacity: 0; }
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .gradient-name {

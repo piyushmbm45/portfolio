@@ -135,11 +135,7 @@ function Navbar() {
       <div className="navbar--container">
         <h1 style={{ color: theme.secondary }}>{shortname(headerData.name)}</h1>
 
-        <IoMenuSharp
-          className={classes.navMenu}
-          onClick={handleDrawerOpen}
-          aria-label="Menu"
-        />
+        <IoMenuSharp className={classes.navMenu} onClick={handleDrawerOpen} aria-label="Menu" />
       </div>
       <Drawer
         variant="temporary"

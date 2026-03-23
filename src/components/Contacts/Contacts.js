@@ -161,15 +161,12 @@ function Contacts() {
   };
 
   return (
-    <div
-      className="contacts"
-      id="contacts"
-      style={{ backgroundColor: theme.secondary }}
-    >
+    <div className="contacts" id="contacts" style={{ backgroundColor: theme.secondary }}>
       <div className="contacts--container">
         <h1 style={{ color: theme.primary }}>Contacts</h1>
         <div className="contacts-body">
-          <motion.div className="contacts-form"
+          <motion.div
+            className="contacts-form"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -223,9 +220,7 @@ function Contacts() {
                     <AiOutlineSend
                       className="send-icon"
                       style={{
-                        animation: !success
-                          ? 'initial'
-                          : 'fly 0.8s linear both',
+                        animation: !success ? 'initial' : 'fly 0.8s linear both',
                         position: success ? 'absolute' : 'initial',
                       }}
                     />
@@ -272,17 +267,15 @@ function Contacts() {
             </Snackbar>
           </motion.div>
 
-          <motion.div className="contacts-details"
+          <motion.div
+            className="contacts-details"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {contactsData.email && (
-              <a
-                href={`mailto:${contactsData.email}`}
-                className="personal-details"
-              >
+              <a href={`mailto:${contactsData.email}`} className="personal-details">
                 <div className={classes.detailsIcon}>
                   <FiAtSign />
                 </div>
@@ -290,10 +283,7 @@ function Contacts() {
               </a>
             )}
             {contactsData.phone && (
-              <a
-                href={`tel:${contactsData.phone}`}
-                className="personal-details"
-              >
+              <a href={`tel:${contactsData.phone}`} className="personal-details">
                 <div className={classes.detailsIcon}>
                   <FiPhone />
                 </div>

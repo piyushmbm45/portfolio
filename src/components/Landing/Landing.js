@@ -25,20 +25,23 @@ function Landing() {
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        setText(currentRole.substring(0, text.length + 1));
-        if (text.length + 1 === currentRole.length) {
-          setTimeout(() => setIsDeleting(true), 1500);
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          setText(currentRole.substring(0, text.length + 1));
+          if (text.length + 1 === currentRole.length) {
+            setTimeout(() => setIsDeleting(true), 1500);
+          }
+        } else {
+          setText(currentRole.substring(0, text.length - 1));
+          if (text.length === 0) {
+            setIsDeleting(false);
+            setRoleIndex((prev) => (prev + 1) % roles.length);
+          }
         }
-      } else {
-        setText(currentRole.substring(0, text.length - 1));
-        if (text.length === 0) {
-          setIsDeleting(false);
-          setRoleIndex((prev) => (prev + 1) % roles.length);
-        }
-      }
-    }, isDeleting ? 50 : 100);
+      },
+      isDeleting ? 50 : 100
+    );
     return () => clearTimeout(timeout);
   }, [text, isDeleting, roleIndex]);
 
@@ -104,7 +107,12 @@ function Landing() {
             '--grad-3': theme.primary400,
           }}
         >
-          <motion.div className="lcl--content" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
+          <motion.div
+            className="lcl--content"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
             {socialsData.linkedIn && (
               <a href={socialsData.linkedIn} target="_blank" rel="noreferrer">
                 <FaLinkedin
@@ -138,15 +146,26 @@ function Landing() {
           animate={{ opacity: drawerOpen ? 0 : 1, scale: 1, x: '-50%' }}
           transition={{ duration: 0.8 }}
         />
-        <div
-          className="landing--container-right"
-          style={{ backgroundColor: theme.secondary }}
-        >
-          <motion.div className="lcr--content" initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} style={{ color: theme.tertiary }}>
+        <div className="landing--container-right" style={{ backgroundColor: theme.secondary }}>
+          <motion.div
+            className="lcr--content"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            style={{ color: theme.tertiary }}
+          >
             <h6 style={{ minHeight: '1.5em' }}>
-              {text}<span className="typing-cursor" style={{ color: theme.primary }}>|</span>
+              {text}
+              <span className="typing-cursor" style={{ color: theme.primary }}>
+                |
+              </span>
             </h6>
-            <h1 className="gradient-name" style={{ '--gradient-start': theme.tertiary, '--gradient-end': theme.primary }}>{headerData.name}</h1>
+            <h1
+              className="gradient-name"
+              style={{ '--gradient-start': theme.tertiary, '--gradient-end': theme.primary }}
+            >
+              {headerData.name}
+            </h1>
             <p>{headerData.description}</p>
 
             <div className="lcr-buttonContainer">

@@ -17,9 +17,7 @@ function SingleService({ id, title, icon }) {
         key={id}
         className="single-service"
         style={{
-          background: theme.type === 'dark'
-            ? 'rgba(255, 255, 255, 0.06)'
-            : theme.primary400,
+          background: theme.type === 'dark' ? 'rgba(255, 255, 255, 0.06)' : theme.primary400,
           backdropFilter: 'blur(10px)',
           WebkitBackdropFilter: 'blur(10px)',
           border: `1px solid ${theme.primary30}`,

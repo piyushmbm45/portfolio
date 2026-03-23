@@ -1,14 +1,22 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import {
-  greenThemeLight, greenThemeDark,
-  bwThemeLight, bwThemeDark,
-  blueThemeLight, blueThemeDark,
-  redThemeLight, redThemeDark,
-  orangeThemeLight, orangeThemeDark,
-  purpleThemeLight, purpleThemeDark,
-  pinkThemeLight, pinkThemeDark,
-  yellowThemeLight, yellowThemeDark,
+  greenThemeLight,
+  greenThemeDark,
+  bwThemeLight,
+  bwThemeDark,
+  blueThemeLight,
+  blueThemeDark,
+  redThemeLight,
+  redThemeDark,
+  orangeThemeLight,
+  orangeThemeDark,
+  purpleThemeLight,
+  purpleThemeDark,
+  pinkThemeLight,
+  pinkThemeDark,
+  yellowThemeLight,
+  yellowThemeDark,
 } from '../../theme/theme';
 import './ThemeSwitcher.css';
 
@@ -71,7 +79,7 @@ function ThemeSwitcher() {
             <button
               className={`mode-btn ${!isDark ? 'active' : ''}`}
               onClick={() => {
-                const currentTheme = themes.find(t => t.color === theme.primary);
+                const currentTheme = themes.find((t) => t.color === theme.primary);
                 if (currentTheme) handleThemeChange(currentTheme, false);
               }}
               style={{
@@ -85,7 +93,7 @@ function ThemeSwitcher() {
             <button
               className={`mode-btn ${isDark ? 'active' : ''}`}
               onClick={() => {
-                const currentTheme = themes.find(t => t.color === theme.primary);
+                const currentTheme = themes.find((t) => t.color === theme.primary);
                 if (currentTheme) handleThemeChange(currentTheme, true);
               }}
               style={{

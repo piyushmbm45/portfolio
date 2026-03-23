@@ -1,10 +1,6 @@
 /* eslint-disable */
 import { BsCodeSlash } from 'react-icons/bs';
-import {
-  FaChalkboardTeacher,
-  FaLaptopCode,
-  FaRegNewspaper
-} from 'react-icons/fa';
+import { FaChalkboardTeacher, FaLaptopCode, FaRegNewspaper } from 'react-icons/fa';
 
 export const servicesData = [
   {

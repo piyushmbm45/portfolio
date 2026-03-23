@@ -13,16 +13,12 @@ function EducationCard({ id, institution, course, startYear, endYear }) {
 
   const useStyles = makeStyles((t) => ({
     educationCard: {
-      background: theme.type === 'dark'
-        ? 'rgba(255, 255, 255, 0.04)'
-        : `${theme.primary30}`,
+      background: theme.type === 'dark' ? 'rgba(255, 255, 255, 0.04)' : `${theme.primary30}`,
       backdropFilter: 'blur(10px)',
       WebkitBackdropFilter: 'blur(10px)',
       border: `1px solid ${theme.primary30}`,
       '&:hover': {
-        background: theme.type === 'dark'
-          ? 'rgba(255, 255, 255, 0.08)'
-          : `${theme.primary50}`,
+        background: theme.type === 'dark' ? 'rgba(255, 255, 255, 0.08)' : `${theme.primary50}`,
         boxShadow: `0 8px 32px ${theme.primary30}`,
       },
     },

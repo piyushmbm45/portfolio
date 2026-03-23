@@ -11,13 +11,10 @@ import { motion } from 'framer-motion';
 function Experience() {
   const { theme } = useContext(ThemeContext);
   return (
-    <div
-      className="experience"
-      id="experience"
-      style={{ backgroundColor: theme.secondary }}
-    >
+    <div className="experience" id="experience" style={{ backgroundColor: theme.secondary }}>
       <div className="experience-body">
-        <motion.div className="experience-description"
+        <motion.div
+          className="experience-description"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -35,7 +32,8 @@ function Experience() {
             />
           ))}
         </motion.div>
-        <motion.div className="experience-image"
+        <motion.div
+          className="experience-image"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
