@@ -1,295 +1,261 @@
+/* === BASE: Mobile === */
 .contacts {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative;
-    padding: 4rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  padding: 4rem 0 2rem;
 }
 
-
 .contacts--img {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 280px;
-    pointer-events: none;
+  display: none;
 }
 
 .contacts--container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 0 4rem 2rem;
-    width: 85%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1.5rem 2rem;
+  width: 100%;
+  height: 100%;
 }
 
 .contacts--container > h1 {
-    font-family: var(--primaryFont);
-    font-size: 3.5rem;
-    margin-bottom: 2rem;
+  font-family: var(--primaryFont);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .contacts-body {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .contacts-form {
-    display: flex;
-    flex: 0.4;
-    width: 100%;
+  display: flex;
+  flex: 1;
+  width: 100%;
 }
 
 .contacts-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .input-container {
-    width: 100%;
+  width: 100%;
 }
 
-
 .form-input {
-    height: 50px;
-    box-sizing: border-box;
-    outline: none;
-    margin-bottom: 2rem;
-    padding: 0.7rem 0.7rem;
-    border-radius: 20px;
-    width: 100%;
-    resize: none;
+  height: 50px;
+  box-sizing: border-box;
+  outline: none;
+  margin-bottom: 0.45rem;
+  padding: 0.7rem 0.7rem;
+  border-radius: 20px;
+  width: 100%;
+  resize: none;
 }
 
 .form-input:focus-visible,
 .form-message:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 .form-message {
-    height: 150px;
-    box-sizing: border-box;
-    outline: none;
-    margin-bottom: 2rem;
-    padding: 0.7rem 0.7rem;
-    border-radius: 20px;
-    width: 100%;
-    resize: none;
+  height: 150px;
+  box-sizing: border-box;
+  outline: none;
+  margin-bottom: 2rem;
+  padding: 0.7rem 0.7rem;
+  border-radius: 20px;
+  width: 100%;
+  resize: none;
+}
+
+.submit-btn {
+  align-self: center;
 }
 
 .submit-btn button {
-    border: none;
-    width: 140px;
-    height: 50px;
-    border-radius: 50px;
-    font-weight: 500;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    cursor: pointer;
+  border: none;
+  width: 140px;
+  height: 50px;
+  border-radius: 50px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
 }
 
 .submit-btn button p {
-    font-size: 1rem;
-    font-family: var(--primaryFont);
+  font-size: 1rem;
+  font-family: var(--primaryFont);
 }
 
 .submit-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
 }
+
 .send-icon {
-    font-size: 1.5rem;
-    transform-origin: center;
-    transform: translate(5px,-3px) rotate(-30deg);
+  font-size: 1.5rem;
+  transform-origin: center;
+  transform: translate(5px, -3px) rotate(-30deg);
 }
 
 .success-icon {
-    font-size: 1.75rem;
-    transition: all 0.3s 0.8s ease-in-out;
+  font-size: 1.75rem;
+  transition: all 0.3s 0.8s ease-in-out;
 }
 
 .contacts-details {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    flex: 0.6;
-    box-sizing: border-box;
-    padding-left: 7rem;
-    margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 0.6;
+  box-sizing: border-box;
+  padding: 0;
+  margin-top: 2rem;
 }
 
-
-
 .personal-details {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 1.8rem;
 }
 
 .personal-details p {
-    margin-left: 1.5rem;
-    font-size: 1.125rem;
-    line-height: 110%;
-    font-weight: 500;
-    font-family: var(--primaryFont);
-    width: 45%;
-    word-break: break-word;
+  margin-left: 1.2rem;
+  font-size: 1rem;
+  line-height: 110%;
+  font-weight: 500;
+  font-family: var(--primaryFont);
+  width: 95%;
+  word-break: break-word;
 }
 
 .socialmedia-icons {
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
-
-
-@media (min-width: 992px) and (max-width: 1380px) {
-    .contacts--img {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 240px;
-    }
-    .contacts--container {
-        padding: 0 3rem 2rem;
-        width: 90%;
-    }
-}
-
-
-@media screen and (max-width: 992px) {
-    .contacts--img {
-        display: none;
-    }
-    .contacts--container {
-        width: 100%;
-    }
-    .contacts--container > h1 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
-    }
-    .contacts-details {
-        padding-left: 4rem;
-    }
-    .personal-details p {
-        margin-left: 1rem;
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .contacts--container h1 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
-    }
-    .contacts--container {
-        padding: 0 1.5rem 2rem;
-        align-items: center;
-    }
-    .contacts-body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .contacts-form {
-        display: flex;
-        flex: 1;
-        width: 80%;
-    }
-    
-    .form-input {
-        margin-bottom: 0.45rem;
-    }
-    .contacts-form form {
-        align-items: flex-end;
-    }
-    .contacts-details {
-        padding-left: 0rem;
-        padding: 1rem;
-        align-items: center;
-        margin-top: 2rem;
-    }
-    .socialmedia-icons {
-        width: 100%;
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
-    .personal-details {
-        margin-bottom: 1.8rem;
-    }
-    .personal-details p {
-        margin-left: 1.2rem;
-        width: 95%;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .contacts-form {
-        display: flex;
-        flex: 1;
-        width: 100%;
-    }
-    .contacts--container h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .contacts-details {
-        padding-left: 0rem;
-        padding: 0rem;
-        align-items: center;
-        margin-top: 2rem;
-    }
-    .submit-btn{align-self: center;}
-}
-  
-@media only screen and (min-device-width: 320px) and (max-device-width: 
-  480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
-    .contacts-details {
-        padding-left: 0rem;
-        padding: 0rem;
-    }
-}
-
-
-
-
 
 @keyframes fly {
-    10% {
-        transform: rotate(0deg);
-    }
-    20% {
-        transform: translateX(-10px);
-    }
-    70% {
-        transform: translateX(60px);
-    }
-    100% {
-        transform: translateX(80px);
-    }
+  10% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  70% {
+    transform: translateX(60px);
+  }
+  100% {
+    transform: translateX(80px);
+  }
+}
+
+/* === 401px+ === */
+@media (min-width: 401px) {
+  .submit-btn {
+    align-self: flex-end;
+  }
+}
+
+/* === 601px+ === */
+@media (min-width: 601px) {
+  .contacts--container > h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  .contacts-form {
+    width: 80%;
+  }
+  .form-input {
+    margin-bottom: 2rem;
+  }
+}
+
+/* === 801px+ === */
+@media (min-width: 801px) {
+  .contacts--container {
+    padding: 0 3rem 2rem;
+    align-items: flex-start;
+  }
+  .contacts-body {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .contacts-form {
+    flex: 0.4;
+    width: 100%;
+  }
+  .contacts-form form {
+    align-items: flex-start;
+  }
+  .contacts-details {
+    padding-left: 4rem;
+    align-items: flex-start;
+    margin-top: 1.2rem;
+  }
+  .personal-details p {
+    margin-left: 1.5rem;
+    font-size: 1.125rem;
+    width: 45%;
+  }
+  .socialmedia-icons {
+    width: 90%;
+    margin-top: 4rem;
+  }
+}
+
+/* === 993px+ === */
+@media (min-width: 993px) {
+  .contacts--container {
+    padding: 0 4rem 2rem;
+    width: 85%;
+  }
+  .contacts--container > h1 {
+    font-size: 3.5rem;
+  }
+  .contacts-details {
+    padding-left: 7rem;
+  }
+  .contacts--img {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 240px;
+    pointer-events: none;
+  }
+}
+
+/* === 1381px+ === */
+@media (min-width: 1381px) {
+  .contacts--img {
+    width: 280px;
+  }
 }

@@ -1,18 +1,29 @@
+/* === BASE: Mobile === */
 .footer {
-    font-family: var(--primaryFont);
-    height: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: var(--primaryFont);
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer p {
-    font-weight: 500;
-    font-family: var(--primaryFont);
-    font-size: 1.125rem;
+  font-weight: 500;
+  font-family: var(--primaryFont);
+  font-size: 1rem;
 }
 
 .footer p span {
+  font-size: 1.25rem;
+}
+
+/* === 601px+ === */
+@media (min-width: 601px) {
+  .footer p {
+    font-size: 1.125rem;
+  }
+  .footer p span {
     font-size: 1.5rem;
+  }
 }
