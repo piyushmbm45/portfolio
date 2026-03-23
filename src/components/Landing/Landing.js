@@ -54,11 +54,13 @@ function Landing() {
       height: '50px',
       fontFamily: 'var(--primaryFont)',
       border: `3px solid ${theme.primary}`,
-      transition: '100ms ease-out',
+      transition: 'all 0.3s ease',
       '&:hover': {
         backgroundColor: theme.tertiary,
         color: theme.secondary,
         border: `3px solid ${theme.tertiary}`,
+        boxShadow: `0 0 20px ${theme.primary50}, 0 0 40px ${theme.primary30}`,
+        transform: 'translateY(-2px)',
       },
       [t.breakpoints.down('sm')]: {
         width: '180px',
@@ -76,11 +78,13 @@ function Landing() {
       fontWeight: '500',
       fontFamily: 'var(--primaryFont)',
       border: `3px solid ${theme.primary}`,
-      transition: '100ms ease-out',
+      transition: 'all 0.3s ease',
       '&:hover': {
         backgroundColor: theme.secondary,
         color: theme.tertiary,
         border: `3px solid ${theme.tertiary}`,
+        boxShadow: `0 0 20px ${theme.primary50}, 0 0 40px ${theme.primary30}`,
+        transform: 'translateY(-2px)',
       },
       [t.breakpoints.down('sm')]: {
         display: 'none',
@@ -94,7 +98,11 @@ function Landing() {
       <div className="landing--container">
         <div
           className="landing--container-left"
-          style={{ backgroundColor: theme.primary }}
+          style={{
+            '--grad-1': theme.primary,
+            '--grad-2': theme.primary600,
+            '--grad-3': theme.primary400,
+          }}
         >
           <motion.div className="lcl--content" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
             {socialsData.linkedIn && (

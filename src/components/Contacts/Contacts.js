@@ -119,11 +119,12 @@ function Contacts() {
     submitBtn: {
       backgroundColor: theme.primary,
       color: theme.secondary,
-      transition: '250ms ease-in-out',
+      transition: 'all 0.3s ease',
       '&:hover': {
-        transform: 'scale(1.08)',
+        transform: 'scale(1.08) translateY(-2px)',
         color: theme.secondary,
         backgroundColor: theme.tertiary,
+        boxShadow: `0 0 20px ${theme.primary50}, 0 0 40px ${theme.primary30}`,
       },
     },
   }));

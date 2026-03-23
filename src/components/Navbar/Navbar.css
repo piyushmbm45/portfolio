@@ -24,6 +24,11 @@
   color: var(--primary-2);
   font-size: 2rem;
   user-select: none;
+  transition: text-shadow 0.3s ease;
+}
+
+.navbar--container > h1:hover {
+  text-shadow: 0 0 15px currentColor;
 }
 
 .navLink--container {

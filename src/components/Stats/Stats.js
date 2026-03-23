@@ -36,8 +36,12 @@ function StatCard({ number, suffix, label, theme, delay, startCounting }) {
     <motion.div
       className="stat-card"
       style={{
-        backgroundColor: theme.secondary,
-        border: `2px solid ${theme.primary30}`,
+        background: theme.type === 'dark'
+          ? `rgba(255, 255, 255, 0.05)`
+          : `rgba(0, 0, 0, 0.03)`,
+        border: `1px solid ${theme.primary30}`,
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
       }}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}

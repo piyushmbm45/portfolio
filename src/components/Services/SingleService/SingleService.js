@@ -16,7 +16,14 @@ function SingleService({ id, title, icon }) {
       <div
         key={id}
         className="single-service"
-        style={{ backgroundColor: theme.primary400 }}
+        style={{
+          background: theme.type === 'dark'
+            ? 'rgba(255, 255, 255, 0.06)'
+            : theme.primary400,
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          border: `1px solid ${theme.primary30}`,
+        }}
       >
         <div className="service-content" style={{ color: theme.tertiary }}>
           <i className="service-icon">{icon}</i>

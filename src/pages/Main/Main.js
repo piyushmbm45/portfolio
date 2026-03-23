@@ -16,6 +16,7 @@ import PerformanceMonitor from '../../components/PerformanceMonitor/PerformanceM
 import Stats from '../../components/Stats/Stats';
 import ScrollProgress from '../../components/ScrollProgress/ScrollProgress';
 import ThemeSwitcher from '../../components/ThemeSwitcher/ThemeSwitcher';
+import WaveDivider from '../../components/WaveDivider/WaveDivider';
 import { headerData } from '../../data/headerData';
 
 // Lazy load heavy components
@@ -58,9 +59,12 @@ function Main() {
       <Navbar />
       <Landing />
       <About />
+      <WaveDivider />
       <Stats />
+      <WaveDivider flip />
       <Education />
       <Skills />
+      <WaveDivider />
       <Experience />
       <Suspense
         fallback={

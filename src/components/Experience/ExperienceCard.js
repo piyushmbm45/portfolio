@@ -14,9 +14,17 @@ function ExperienceCard({ id, company, jobtitle, startYear, endYear }) {
 
   const useStyles = makeStyles((t) => ({
     experienceCard: {
-      backgroundColor: theme.primary30,
+      background: theme.type === 'dark'
+        ? 'rgba(255, 255, 255, 0.04)'
+        : `${theme.primary30}`,
+      backdropFilter: 'blur(10px)',
+      WebkitBackdropFilter: 'blur(10px)',
+      border: `1px solid ${theme.primary30}`,
       '&:hover': {
-        backgroundColor: theme.primary50,
+        background: theme.type === 'dark'
+          ? 'rgba(255, 255, 255, 0.08)'
+          : `${theme.primary50}`,
+        boxShadow: `0 8px 32px ${theme.primary30}`,
       },
     },
   }));
