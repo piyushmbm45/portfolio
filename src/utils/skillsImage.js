@@ -24,6 +24,7 @@ export const skillsImage = (skill) => {
     case 'html':
       return html;
     case 'nodejs':
+    case 'node.js':
       return nodejs;
     case 'css':
       return css;

@@ -62,21 +62,6 @@
 .form-input {
     height: 50px;
     box-sizing: border-box;
-    border-radius: 50px; 
-    outline: none;
-    margin-bottom: 2rem;
-    padding: 0.7rem 0.7rem;
-    border-radius: 20px;
-    width: 100%; 
-    resize: none;
-}
-
-
-
-.form-message {
-    height: 150px;
-    box-sizing: border-box;
-    border-radius: 50px; 
     outline: none;
     margin-bottom: 2rem;
     padding: 0.7rem 0.7rem;
@@ -85,11 +70,25 @@
     resize: none;
 }
 
+.form-input:focus-visible,
+.form-message:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
 
+.form-message {
+    height: 150px;
+    box-sizing: border-box;
+    outline: none;
+    margin-bottom: 2rem;
+    padding: 0.7rem 0.7rem;
+    border-radius: 20px;
+    width: 100%;
+    resize: none;
+}
 
 .submit-btn button {
     border: none;
-    outline: none;
     width: 140px;
     height: 50px;
     border-radius: 50px;
@@ -280,52 +279,17 @@
 
 
 
-@keyframes spin{
-    0%{
-        opacity: 1;
-        transform: translate(5px,-3px) rotate(0deg);
-    }
-    /* 60%{
-      opacity: 0;
-    }
-    80%{
-      opacity: 1;
-    } */
-    100%{
-      transform: rotate(359deg);
-    }
-  }
-
-  @keyframes fly{
-    /* 0%,100%{
-        transform: translate(5px,-3px) rotate(-30deg);
-        opacity: 1;
-    }
-    25%{
-        transform: translate(15px,-10px) rotate(-30deg);
-        opacity: 0.8;
-    }
-    50%{
-        transform: translate(20px,-12px) rotate(-30deg);
-        opacity: 0;
-    }
-    60%{
-        transform: translate(-12px,10px) rotate(-30deg);
-        opacity: 0;
-    }
-    75%{
-        opacity: 0.8;
-    } */
-    10%{
+@keyframes fly {
+    10% {
         transform: rotate(0deg);
-        }
-        20%{
-        transform: translateX(-10px);    
-        }
-        70%{
-          transform: translateX(60px);
-        }
-        100%{
-            transform: translateX(80px);
-        }
-  }
+    }
+    20% {
+        transform: translateX(-10px);
+    }
+    70% {
+        transform: translateX(60px);
+    }
+    100% {
+        transform: translateX(80px);
+    }
+}

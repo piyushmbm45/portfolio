@@ -78,6 +78,7 @@ function Stats() {
     { number: 23, suffix: 'M+', label: 'Records Managed' },
     { number: 500, suffix: 'K+', label: 'Daily Transactions' },
     { number: 3000, suffix: '+', label: 'KYC Onboardings/Day' },
+    { number: 12, suffix: 'M+', label: 'Ledger Users Managed' },
   ];
 
   return (

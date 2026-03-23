@@ -1,10 +1,9 @@
 .backToTop {
-    position: fixed; 
-    right: 10px;
-    bottom: 60px;
-    height: 30px;
+    position: fixed;
+    right: 25px;
+    bottom: 95px;
     font-size: 3rem;
-    z-index: 999;
+    z-index: 99;
 }
 
 .backToTop button {
@@ -12,13 +11,20 @@
     border: none;
     cursor: pointer;
     background: none;
-    padding: 20px;
+    padding: 5px;
+    line-height: 1;
+}
+
+.backToTop button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
 @media screen and (max-width: 800px) {
-    .backToTop { 
-        right: -10px;
-        bottom: 50px;
+    .backToTop {
+        right: 15px;
+        bottom: 75px;
         font-size: 2.75rem;
     }
 }

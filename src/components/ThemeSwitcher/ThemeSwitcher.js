@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import {
   greenThemeLight, greenThemeDark,
@@ -26,6 +26,19 @@ const themes = [
 function ThemeSwitcher() {
   const { theme, changeTheme } = useContext(ThemeContext);
   const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    if (open) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [open]);
 
   const handleThemeChange = (themeOption, isDark) => {
     changeTheme(isDark ? themeOption.dark : themeOption.light);
@@ -34,7 +47,7 @@ function ThemeSwitcher() {
   const isDark = theme.type === 'dark';
 
   return (
-    <div className="theme-switcher">
+    <div className="theme-switcher" ref={ref}>
       <button
         className="theme-switcher-toggle"
         onClick={() => setOpen(!open)}

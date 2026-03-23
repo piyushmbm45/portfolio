@@ -33,7 +33,7 @@ function ExperienceCard({ id, company, jobtitle, startYear, endYear }) {
         <div className="expcard-img" style={{ backgroundColor: theme.primary }}>
           <img
             src={theme.type === 'light' ? expImgBlack : expImgWhite}
-            alt=""
+            alt={`${company} - ${jobtitle}`}
           />
         </div>
         <div className="experience-details">

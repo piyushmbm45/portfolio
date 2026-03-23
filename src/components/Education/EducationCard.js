@@ -32,7 +32,7 @@ function EducationCard({ id, institution, course, startYear, endYear }) {
         <div className="educard-img" style={{ backgroundColor: theme.primary }}>
           <img
             src={theme.type === 'light' ? eduImgBlack : eduImgWhite}
-            alt=""
+            alt={`${institution} - ${course}`}
           />
         </div>
         <div className="education-details">
