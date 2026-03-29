@@ -29,6 +29,11 @@
   align-self: center;
 }
 
+.experience-description > div {
+  width: 100%;
+  max-width: 100%;
+}
+
 .experience-card {
   display: flex;
   flex-direction: row;
@@ -137,6 +142,9 @@
     padding: 2rem;
     margin: 0;
     margin-left: 7%;
+  }
+  .experience-description > div {
+    max-width: 500px;
   }
   .experience-description > h1 {
     font-size: 3.2rem;

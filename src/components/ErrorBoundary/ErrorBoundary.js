@@ -11,6 +11,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
+    // eslint-disable-next-line no-console
     console.error('Error caught by boundary:', error, errorInfo);
   }
 
@@ -28,7 +29,7 @@ class ErrorBoundary extends React.Component {
           }}
         >
           <h2>Something went wrong</h2>
-          <p>We're sorry, but something unexpected happened.</p>
+          <p>We&apos;re sorry, but something unexpected happened.</p>
           <button
             onClick={() => this.setState({ hasError: false, error: null })}
             style={{

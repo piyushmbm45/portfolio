@@ -139,7 +139,7 @@ function Landing() {
           className="landing--img"
           style={{
             opacity: `${drawerOpen ? '0' : '1'}`,
-            borderColor: theme.secondary,
+            boxShadow: `0 0 40px ${theme.primary50}, 0 0 80px ${theme.primary30}`,
             x: '-50%',
           }}
           initial={{ opacity: 0, scale: 0.5, x: '-50%' }}

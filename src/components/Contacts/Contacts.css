@@ -75,11 +75,20 @@
   height: 150px;
   box-sizing: border-box;
   outline: none;
-  margin-bottom: 2rem;
+  margin-bottom: 0.25rem;
   padding: 0.7rem 0.7rem;
   border-radius: 20px;
   width: 100%;
   resize: none;
+}
+
+.char-counter {
+  display: block;
+  text-align: right;
+  font-size: 0.75rem;
+  font-family: var(--primaryFont);
+  margin: 0 0 1.5rem;
+  padding-right: 10px;
 }
 
 .submit-btn {

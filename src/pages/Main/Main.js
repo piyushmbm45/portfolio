@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 
 import {
   About,
-  Achievement,
   Contacts,
   Education,
   Experience,
@@ -19,9 +18,7 @@ import ThemeSwitcher from '../../components/ThemeSwitcher/ThemeSwitcher';
 import WaveDivider from '../../components/WaveDivider/WaveDivider';
 import { headerData } from '../../data/headerData';
 
-// Lazy load heavy components
 const LazyProjects = lazy(() => import('../../components/Projects/Projects'));
-const LazyServices = lazy(() => import('../../components/Services/Services'));
 
 function Main() {
   return (
@@ -62,10 +59,9 @@ function Main() {
       <WaveDivider />
       <Stats />
       <WaveDivider flip />
-      <Education />
       <Skills />
-      <WaveDivider />
       <Experience />
+      <WaveDivider />
       <Suspense
         fallback={
           <div
@@ -82,23 +78,7 @@ function Main() {
       >
         <LazyProjects />
       </Suspense>
-      <Achievement />
-      <Suspense
-        fallback={
-          <div
-            style={{
-              height: '200px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            Loading...
-          </div>
-        }
-      >
-        <LazyServices />
-      </Suspense>
+      <Education />
       <Contacts />
       <Footer />
     </main>

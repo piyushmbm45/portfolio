@@ -1,12 +1,10 @@
 import Drawer from '@material-ui/core/Drawer';
 import { makeStyles } from '@material-ui/core/styles';
 import CloseIcon from '@material-ui/icons/Close';
-import React, { useContext, useState } from 'react';
-import { BsFillGearFill } from 'react-icons/bs';
-import { FaUser } from 'react-icons/fa';
-import { HiDocumentText } from 'react-icons/hi';
+import React, { useContext, useState, useEffect } from 'react';
+import { FaUser, FaBriefcase, FaCode } from 'react-icons/fa';
 import { IoHomeSharp, IoMenuSharp } from 'react-icons/io5';
-import { MdPhone } from 'react-icons/md';
+import { MdPhone, MdSchool } from 'react-icons/md';
 import { motion } from 'framer-motion';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 
@@ -14,10 +12,27 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 import { headerData } from '../../data/headerData';
 import './Navbar.css';
 
+const navLinks = [
+  { to: '/', label: 'Home', icon: IoHomeSharp },
+  { to: '/#about', label: 'About', icon: FaUser },
+  { to: '/#resume', label: 'Education', icon: MdSchool },
+  { to: '/#experience', label: 'Experience', icon: FaBriefcase },
+  { to: '/#projects', label: 'Projects', icon: FaCode },
+  { to: '/#contacts', label: 'Contact', icon: MdPhone },
+];
+
 function Navbar() {
   const { theme, setHandleDrawer } = useContext(ThemeContext);
-
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -31,28 +46,21 @@ function Navbar() {
 
   const useStyles = makeStyles((t) => ({
     navMenu: {
-      fontSize: '2.5rem',
+      fontSize: '2rem',
       color: theme.tertiary,
       cursor: 'pointer',
-      transform: 'translateY(-10px)',
       transition: 'color 0.3s',
       '&:hover': {
         color: theme.primary,
-      },
-      [t.breakpoints.down('sm')]: {
-        fontSize: '2.5rem',
-      },
-      [t.breakpoints.down('xs')]: {
-        fontSize: '2rem',
       },
     },
     MuiDrawer: {
       padding: '0em 1.8em',
       width: '14em',
-      fontFamily: ' var(--primaryFont)',
-      fontStyle: ' normal',
-      fontWeight: ' normal',
-      fontSize: ' 24px',
+      fontFamily: 'var(--primaryFont)',
+      fontStyle: 'normal',
+      fontWeight: 'normal',
+      fontSize: '24px',
       background: theme.secondary,
       overflow: 'hidden',
       borderTopRightRadius: '40px',
@@ -131,12 +139,51 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar">
+    <div
+      className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}
+      style={
+        scrolled
+          ? {
+              backgroundColor: theme.secondary,
+              boxShadow: `0 2px 20px ${theme.primary30}`,
+            }
+          : {}
+      }
+    >
       <div className="navbar--container">
-        <h1 style={{ color: theme.secondary }}>{shortname(headerData.name)}</h1>
+        <NavLink to="/" smooth={true} spy="true" duration={2000} style={{ textDecoration: 'none' }}>
+          <h1 style={{ color: scrolled ? theme.tertiary : theme.secondary }}>
+            {shortname(headerData.name)}
+          </h1>
+        </NavLink>
 
-        <IoMenuSharp className={classes.navMenu} onClick={handleDrawerOpen} aria-label="Menu" />
+        {/* Desktop nav links */}
+        <nav className="navbar--links-desktop">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.label}
+              to={link.to}
+              smooth={true}
+              spy="true"
+              duration={2000}
+              className="navbar--link"
+              style={{ color: scrolled ? theme.tertiary : theme.secondary }}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
+
+        {/* Mobile hamburger */}
+        <IoMenuSharp
+          className={`${classes.navMenu} navbar--hamburger`}
+          onClick={handleDrawerOpen}
+          aria-label="Menu"
+          style={{ color: scrolled ? theme.tertiary : theme.secondary }}
+        />
       </div>
+
+      {/* Mobile drawer */}
       <Drawer
         variant="temporary"
         onClose={(event, reason) => {
@@ -171,70 +218,24 @@ function Navbar() {
 
         <div onClick={handleDrawerClose}>
           <div className="navLink--container">
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <NavLink to="/" smooth={true} spy="true" duration={2000}>
-                <div className={classes.drawerItem}>
-                  <IoHomeSharp className={classes.drawerIcon} />
-                  <span className={classes.drawerLinks}>Home</span>
-                </div>
-              </NavLink>
-            </motion.div>
-
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <NavLink to="/#about" smooth={true} spy="true" duration={2000}>
-                <div className={classes.drawerItem}>
-                  <FaUser className={classes.drawerIcon} />
-                  <span className={classes.drawerLinks}>About</span>
-                </div>
-              </NavLink>
-            </motion.div>
-
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <NavLink to="/#resume" smooth={true} spy="true" duration={2000}>
-                <div className={classes.drawerItem}>
-                  <HiDocumentText className={classes.drawerIcon} />
-                  <span className={classes.drawerLinks}>Resume</span>
-                </div>
-              </NavLink>
-            </motion.div>
-
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <NavLink to="/#services" smooth={true} spy="true" duration={2000}>
-                <div className={classes.drawerItem}>
-                  <BsFillGearFill className={classes.drawerIcon} />
-                  <span className={classes.drawerLinks}>Services</span>
-                </div>
-              </NavLink>
-            </motion.div>
-
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <NavLink to="/#contacts" smooth={true} spy="true" duration={2000}>
-                <div className={classes.drawerItem}>
-                  <MdPhone className={classes.drawerIcon} />
-                  <span className={classes.drawerLinks}>Contact</span>
-                </div>
-              </NavLink>
-            </motion.div>
+            {navLinks.map((link, index) => {
+              const Icon = link.icon;
+              return (
+                <motion.div
+                  key={link.label}
+                  initial={{ x: -50, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <NavLink to={link.to} smooth={true} spy="true" duration={2000}>
+                    <div className={classes.drawerItem}>
+                      <Icon className={classes.drawerIcon} />
+                      <span className={classes.drawerLinks}>{link.label}</span>
+                    </div>
+                  </NavLink>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </Drawer>

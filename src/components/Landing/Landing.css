@@ -24,8 +24,7 @@
   height: var(--img-size);
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+  border: none;
   transition: opacity 0.3s;
   z-index: 2;
 }
