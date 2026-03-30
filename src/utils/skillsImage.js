@@ -14,6 +14,11 @@ import postgresql from '../assets/svg/skills/postgresql.svg';
 import react from '../assets/svg/skills/react.svg';
 import tailwind from '../assets/svg/skills/tailwind.svg';
 import redis from '../assets/svg/skills/redis.svg';
+import citus from '../assets/svg/skills/citus.png';
+import reactquery from '../assets/svg/skills/reactquery.svg';
+import antdesign from '../assets/svg/skills/antdesign.svg';
+import nginx from '../assets/svg/skills/nginx.svg';
+import nginxOriginal from '../assets/svg/skills/nginx-original.svg';
 import typescript from '../assets/svg/skills/typescript.svg';
 
 export const skillsImage = (skill) => {
@@ -45,6 +50,16 @@ export const skillsImage = (skill) => {
       return postgresql;
     case 'redis':
       return redis;
+    case 'citus':
+      return citus;
+    case 'nginx':
+      return nginxOriginal;
+    case 'nginx proxy manager':
+      return nginx;
+    case 'react query':
+      return reactquery;
+    case 'ant design':
+      return antdesign;
     case 'tailwind':
       return tailwind;
     case 'vitejs':
